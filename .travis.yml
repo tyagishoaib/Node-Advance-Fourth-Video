@@ -16,6 +16,7 @@ cache:
     - client/node_modules
 install:
   - npm install
+  - cd client && npm install && cd ..
   - npm run build
 script:
   - nohup npm run start &
