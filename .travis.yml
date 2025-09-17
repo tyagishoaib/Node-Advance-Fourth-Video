@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-  - "14"
   - "16"
-  - "18"
-  - "20"
-dist: trusty
+dist: bionic
 services:
   - mongodb
   - redis-server
+addons:
+  chrome: stable
 env:
   - NODE_ENV=ci PORT=3000
 cache:
@@ -16,7 +15,6 @@ cache:
     - client/node_modules
 install:
   - npm install
-  - cd client && npm install && cd ..
   - npm run build
 script:
   - nohup npm run start &
