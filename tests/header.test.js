@@ -1,7 +1,6 @@
 
 const Page =require('./helpers/page');
 
-
 let page;
 
 beforeEach(async ()=>{
